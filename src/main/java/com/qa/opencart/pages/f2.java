@@ -11,6 +11,7 @@ public class f2 {
 	public void login() {
 		
 		String un = "lavu";
+		String role = "admin";
 	}
 
 }
