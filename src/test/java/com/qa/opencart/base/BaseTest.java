@@ -5,6 +5,7 @@ import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Parameters;
 
 import com.qa.opencart.factory.DriverFactory;
 import com.qa.opencart.pages.AccountsPage;
@@ -26,13 +27,20 @@ DriverFactory df;
 	public ProductInfoPage productInfoPage;
 	public RegisterPage registerPage;
 	
+	
+	@Parameters({"browser"})
 	@BeforeTest
-	public void setup() {
+	public void setup(String browser) { // this browser is coming from testng_regression.xml
 		
 		// creating object of DriverFactory
 		
 		df = new DriverFactory();
 		prop = df.initProp();
+		
+		if (browser!=null) {
+			
+			prop.setProperty("browser", browser); // the 2nd browser is coming from testng_regression.xml, here update the browser value of config.prop file from the browser value coming from testng_regression.xml file
+		}
 		
 		/**
 		 *  This driver is holding the driver which is returning from the initDriver in DriverFactory class
