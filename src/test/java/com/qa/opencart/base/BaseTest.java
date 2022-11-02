@@ -28,9 +28,9 @@ DriverFactory df;
 	public RegisterPage registerPage;
 	
 	
-	@Parameters({"browser"})
+	@Parameters({"browser", "browserversion", "testname"})
 	@BeforeTest
-	public void setup(String browser) { // this browser is coming from testng_regression.xml
+	public void setup(String browser, String browserVersion, String testName) { // this browser is coming from testng_regression.xml
 		
 		// creating object of DriverFactory
 		
@@ -40,6 +40,8 @@ DriverFactory df;
 		if (browser!=null) {
 			
 			prop.setProperty("browser", browser); // the 2nd browser is coming from testng_regression.xml, here update the browser value of config.prop file from the browser value coming from testng_regression.xml file
+			prop.setProperty("browserversion", browserVersion);
+			prop.setProperty("testname", testName);
 		}
 		
 		/**

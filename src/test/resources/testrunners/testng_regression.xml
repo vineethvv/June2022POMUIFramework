@@ -15,13 +15,17 @@
 
 	<test name="Login Test">
         <parameter name="browser" value="chrome" />
+        <parameter name="browserversion" value="90.0" />
+        <parameter name="testname" value="LoginPageTest" />
 		<classes>
 			<class name="com.qa.opencart.tests.LoginPageTest" />
 		</classes>
 	</test>
 
 	<test name="Accounts Page Test">
-	    <parameter name="browser" value="firefox" />
+	    <parameter name="browser" value="chrome" />
+	    <parameter name="browserversion" value="107.0" />
+	     <parameter name="testname" value="AccountsPageTest" />
 		<classes>
 			<class name="com.qa.opencart.tests.AccountsPageTest" />
 		</classes>
